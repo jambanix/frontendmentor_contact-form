@@ -38,7 +38,10 @@ export const Form = () => {
   const radioOption = watch("enquiry");
   const [showModal, setShowModal] = useState(false);
 
-  const submit = (formData) => setShowModal((prev) => true);
+  const submit = (formData) => {
+    reset();
+    setShowModal(prev => true);
+  }
 
   useEffect(() => {
     if (showModal) {
