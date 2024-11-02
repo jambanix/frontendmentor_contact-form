@@ -5,6 +5,8 @@ import { TextArea } from "./TextArea";
 import { Checkbox } from "./Checkbox";
 import { Label } from "./Label";
 import { ErrorMessage } from "./ErrorMessage";
+import { Modal } from "./Modal";
+import { useEffect, useState } from "react";
 
 const defaultValues = {
   "forename": "",
@@ -26,10 +28,17 @@ export const Form = () => {
   });
 
   const radioOption = watch("enquiry");
+  const [showModal, setShowModal] = useState(false);
 
-  const submit = (formData) => {
-    console.log(formData);
-  }
+  const submit = (formData) => setShowModal(prev => true);
+  
+  useEffect(() => {
+    if (showModal) {
+      setTimeout(() => {
+        setShowModal(prev => false);
+      }, 5000);
+    }
+  }, [showModal])
 
   const handleAgreeButtonSelect = () => {
     const isSelected = getValues().terms === true;
@@ -37,7 +46,10 @@ export const Form = () => {
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit(submit)} className="grid grid-cols-1 md:grid-cols-2 bg-white p-6 gap-4 rounded-md w-full max-w-[736px]">
+    <form noValidate onSubmit={handleSubmit(submit)} className="grid grid-cols-1 md:grid-cols-2 bg-white p-6 gap-4 rounded-md w-full max-w-[736px] relative overflow-hidden">
+
+      {/* Modal */}
+      <Modal visible={showModal}/>
 
       {/* Text fields */}
       <h3 className="text-3xl font-semibold mb-2 text-grey-900">Contact Us</h3>
