@@ -5,9 +5,9 @@ function App() {
 
   return (
     <>
-      <main className='flex items-center justify-center w-screen h-screen bg-green-200'>
-        <Form />
-      </main>
+    <main className='flex items-center justify-center w-full min-h-screen bg-green-200 sm:px-16 sm:py-8 md:py-16'>
+      <Form />
+    </main>
     </>
   )
 }
