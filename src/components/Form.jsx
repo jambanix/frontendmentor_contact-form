@@ -3,6 +3,7 @@ import { Input } from "./Input";
 import { Radio } from "./Radio";
 import { TextArea } from "./TextArea";
 import { Checkbox } from "./Checkbox";
+import { Label } from "./Label";
 
 const defaultValues = {
   "forename": "",
@@ -28,7 +29,7 @@ export const Form = () => {
 
       {/* Radio buttons */}
       <div className="flex flex-col col-start-1 md:col-span-2 gap-2">
-        <label>Query Type</label>
+        <Label>Query type</Label>
         <div className="flex flex-col md:flex-row md:col-span-2 md:justify-between md:w-full gap-4">
           <Radio name="genenq" {...register("enquiry")} value="genenq" label="General Enquiry" className="flex-grow"/>
           <Radio name="supenq" {...register("enquiry")} value="supenq" label="Support Request" className="flex-grow"/>
@@ -43,7 +44,7 @@ export const Form = () => {
         <Checkbox name="terms" label="I consent to being contacted by the team" {...register("terms")} className="md:col-span-2"/>
 
         {/* Submit */}
-        <button type="submit" className="rounded-md bg-green-600 text-white hover:bg-grey-900 md:col-span-2 h-8">Submit</button>
+        <button type="submit" className="rounded-md bg-green-600 text-white hover:bg-grey-900 md:col-span-2 h-14 font-bold text-xl">Submit</button>
       </div>
     </form>
   )
