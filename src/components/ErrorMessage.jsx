@@ -1,9 +1,10 @@
 
 export const ErrorMessage = ({ message }) => {
 
-  const isActive = message !== undefined;
+  const isActive = message ? true : false;
+  const msgText = message ? message : "";
 
   return (
-    <p className={`text-sm transition-opacity text-red ${isActive ? "opacity-100 visible" : "opacity-0 invisible"}`}>{message}</p>
+    <p className={`text-sm transition-all ${isActive ? "opacity-100 visible text-red" : "opacity-0 hidden"}`}>{msgText}</p>
   )
 }
