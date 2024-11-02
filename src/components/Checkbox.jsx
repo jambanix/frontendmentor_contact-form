@@ -1,11 +1,17 @@
 import { forwardRef } from "react";
 import { Label } from "../components/Label"
+import { ErrorMessage } from "./ErrorMessage";
 
-export const Checkbox = forwardRef(({name, onSelect, label}, ref) => {
+export const Checkbox = forwardRef(({name, onSelect, label, error}, ref) => {
+
   return (
-    <div onClick={onSelect} className="flex gap-4 items-center">
-      <input type="checkbox" name={name} id={name} ref={ref} className="w-5 h-5 accent-green-600"/>
-      <Label htmlfor={name}>{label}</Label>
+    <div className="flex flex-col">
+      <div onClick={onSelect} className="flex gap-4 items-center" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+        <input type="checkbox" name={name} id={name} ref={ref} className="w-5 h-5 accent-green-600"/>
+        <Label htmlfor={name}>{label}</Label>
+      </div>
+      <ErrorMessage message={{...error}} />
     </div>
+    
   )
 });
