@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/jambanix/frontendmentor_contact-form)
-- Live Site URL: [Add live site URL here](https://jambanix.github.io/frontendmentor_contact-form/)
+- Solution URL: [Here](https://github.com/jambanix/frontendmentor_contact-form)
+- Live Site URL: [Here](https://jambanix.github.io/frontendmentor_contact-form/)
 
 ## My process
 
